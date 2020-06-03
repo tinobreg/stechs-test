@@ -1,0 +1,52 @@
+version: '3.2'
+
+services:
+  nginx:
+    #image: nginx:latest
+    build:
+      dockerfile: Dockerfile-nginx
+      context: .
+    ports:
+      - "80:80"
+      - "1080:1080"
+    hostname: stechs.local
+    networks:
+      default:
+        aliases:
+        - stechs.local
+        - api.stechs.local
+
+    extra_hosts:
+      - "stechs.local:127.0.0.1"
+      - "api.stechs.local:127.0.0.1"
+    links:
+      - phpfpm
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/frontend:/etc/nginx/conf.d/frontend.conf
+      - ./nginx/api:/etc/nginx/conf.d/api.conf
+
+      - .:/app
+  phpfpm:
+    #image: dmstr/php-yii2:7.1-fpm-3.1-alpine-nginx-xdebug
+    build:
+      dockerfile: Dockerfile-fpm
+      context: .
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+    links:
+      - mysql
+
+  mysql:
+    image: mariadb:10.2
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_DATABASE=stechs
+      - MYSQL_USER=stechs
+      - MYSQL_PASSWORD=123
+    volumes:
+      - ./data:/var/lib/mysql

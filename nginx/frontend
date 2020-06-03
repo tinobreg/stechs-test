@@ -1,0 +1,17 @@
+server {
+    listen  80;
+
+    # this path MUST be exactly as docker-compose.fpm.volumes,
+    # even if it doesn't exists in this dock.
+    root /app/webapp;
+    index index.html;
+
+    server_name stechs.local;
+
+    location / {
+        root /app/webapp;
+        index index.html;
+    }
+
+    sendfile off;
+}

@@ -1,0 +1,32 @@
+server {
+    listen  80;
+
+    # this path MUST be exactly as docker-compose.fpm.volumes,
+    # even if it doesn't exists in this dock.
+    root /app/web;
+    index index.php;
+
+    server_name api.stechs.local;
+
+    location / {
+        # Redirect everything that isn't a real file to index.php
+        root /app/web;
+        index index.php;
+        try_files $uri $uri/ /index.php$is_args$args;
+
+        if ($request_method = 'OPTIONS') {
+            return 204;
+        }
+    }
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass phpfpm:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+        try_files $uri =404;
+    }
+
+    sendfile off;
+}

@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "c21d5b4f-6b8a-4fa4-b98f-47ce36a94a7f",
+		"name": "Stechs TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.stechs.local/",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stechs",
+						"local"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/modem/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.stechs.local/modem/list",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stechs",
+						"local"
+					],
+					"path": [
+						"modem",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/modem/list/{mac}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.stechs.local/modem/list/0023beed783a",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stechs",
+						"local"
+					],
+					"path": [
+						"modem",
+						"list",
+						"0023beed783a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/modem/list/vendor/{vendor}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.stechs.local/modem/list/vendor/Motorola",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stechs",
+						"local"
+					],
+					"path": [
+						"modem",
+						"list",
+						"vendor",
+						"Motorola"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/modem/list/vendor/{vendor}/empty",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.stechs.local/modem/list/vendor/Arris/empty",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stechs",
+						"local"
+					],
+					"path": [
+						"modem",
+						"list",
+						"vendor",
+						"Arris",
+						"empty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/modem/list/vendor/{vendor}/empty Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "macaddress",
+							"value": "c8fb2658943b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.stechs.local/modem/add",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stechs",
+						"local"
+					],
+					"path": [
+						"modem",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
