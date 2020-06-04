@@ -15,8 +15,9 @@ ESTRUCTURA
       config/             contains application configurations
       controllers/        contains Web controller classes
       models/             contains model classes
+      postman             contains POSTMAN collection for testing
       runtime/            contains files generated during runtime
-      test/               contains POSTMAN collection for testing
+      tests/              contains codeception api tests
       vendor/             contains dependent 3rd-party packages
       web/                contains the entry script and Web resources
       
@@ -120,7 +121,7 @@ TESTING
 -------
 
 ### Via POSTMAN
-Las colecciones estan guardadas en `/test`.
+Las colecciones estan guardadas en `/postman`.
 
 Listado de endpoints
 
@@ -129,3 +130,10 @@ Listado de endpoints
     GET modem/list/vendor/{vendor}
     GET modem/list/vendor/{vendor}/empty
     POST modem/add
+    
+### Via Codeception
+Los test automaticos estan guardadas en `/tests/api`.
+
+~~~
+php vendor/bin/codecept run api
+~~~
