@@ -44,26 +44,32 @@ var loadTable = debounce(function(vendor) {
         },
         success: function (data) {
             if(data.success) {
-                var tableHtml = $('#table-container').html();
-                $('#result-container').html(tableHtml);
 
-                var rows = '';
-                $.each(data.modems, function (i, v) {
-                    var row = '<tr class="'+formatForCssClass(v.vsi_model)+' '+formatForCssClass(v.vsi_swver)+'">';
-                    row    += '<td>'+v.modem_macaddr+'</td>';
-                    row    += '<td>'+v.ipaddr+'</td>';
-                    row    += '<td>'+v.vsi_model+'</td>';
-                    row    += '<td>'+v.vsi_swver+'</td>';
-                    row    += '<td class="button-container">';
+                if(data.modems.length > 0) {
+                    var tableHtml = $('#table-container').html();
+                    $('#result-container').html(tableHtml);
+
+                    var rows = '';
+                    $.each(data.modems, function (i, v) {
+                        var row = '<tr class="'+formatForCssClass(v.vsi_model)+' '+formatForCssClass(v.vsi_swver)+'">';
+                        row    += '<td>'+v.modem_macaddr+'</td>';
+                        row    += '<td>'+v.ipaddr+'</td>';
+                        row    += '<td>'+v.vsi_model+'</td>';
+                        row    += '<td>'+v.vsi_swver+'</td>';
+                        row    += '<td class="button-container">';
                         row    += '<a class="add-modem btn btn-secondary btn-sm" href="javascript:;" data-macaddress="'+v.modem_macaddr+'" data-parent=".'+formatForCssClass(v.vsi_model)+'.'+formatForCssClass(v.vsi_swver)+'">Agregar</a>';
-                    row    += '</td>';
-                    row    += '</tr>';
+                        row    += '</td>';
+                        row    += '</tr>';
 
-                    rows += row;
-                });
+                        rows += row;
+                    });
 
-                $('#result-container #vendor-names').html('Fabricante/s: '+data.vendors);
-                $('#result-container #thead').html(rows);
+                    $('#result-container #vendor-names').html('Fabricante/s: '+data.vendors);
+                    $('#result-container #thead').html(rows);
+                } else {
+                    $('#result-container').html('<h2 class="text-center">No se encontraron cablemodem sin asignar</h2>');
+                }
+
             } else {
                 $('#result-container').html('<h2 class="text-center">'+data.error+'</h2>');
             }

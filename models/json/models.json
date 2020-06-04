@@ -1,1 +1,80 @@
-{"version":"v1.0","models":[{"vendor":"Cisco","name":"DPC3825","soft":"v1"},{"vendor":"Cisco","name":"DPC9989","soft":"v1"},{"vendor":"Moto","name":"SBG901","soft":"v1"},{"vendor":"Cisco","name":"DPC2320","soft":"v1"},{"vendor":"Cisco","name":"DPC2420","soft":"D2425-P10-13-v202r12811-110511as-TRO"},{"vendor":"Arris","name":"DG860P2","soft":"v1"},{"vendor":"Moto","name":"SBG900","soft":"v1"},{"vendor":"Arris","name":"DG950A","soft":"v1"},{"vendor":"Arris","name":"DG950A","soft":"v1"},{"vendor":"Arris","name":"TG862A","soft":"v1"},{"vendor":"Arris","name":"TM601A","soft":"6.1.95"},{"vendor":"Arris","name":"DG860P2_v9","soft":"v1"},{"vendor":"Arris","name":"DG860P2","soft":"v1"},{"vendor":"Arris","name":"DG1660A","soft":"v1"},{"vendor":"Arris","name":"DG1555","soft":"v1"},{"vendor":"Arris","name":"DG1660A_v9","soft":"v1"},{"vendor":"Arris","name":"TM501A","soft":"6.1.95"},{"vendor":"Arris","name":"DG860P2","soft":"7.5.125H"},{"vendor":"Cisco","name":"DPC2420","soft":"D2425-P10-13-v202r12811-140207as-TRO"},{"vendor":"Moto","name":"SB5102","soft":"SB5102N-2.7.5.0-GA-00-NOSH"},{"vendor":"Cisco","name":"DPC2320","soft":"dpc2300r2-v202r124482-120514as-v6"},{"vendor":"Arris","name":"TM601A","soft":"6.1.60"}]}
+{
+  "version": "v1.0",
+  "models": [
+    {
+      "vendor": "Cisco",
+      "name": "DPC3825",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Cisco",
+      "name": "DPC9989",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Moto",
+      "name": "SBG901",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Cisco",
+      "name": "DPC2320",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG860P2",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Moto",
+      "name": "SBG900",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG950A",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG950A",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "TG862A",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "TM601A",
+      "soft": "6.1.95"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG860P2_v9",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG860P2",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG1660A",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG1555",
+      "soft": "v1"
+    },
+    {
+      "vendor": "Arris",
+      "name": "DG1660A_v9",
+      "soft": "v1"
+    }
+  ]
+}
